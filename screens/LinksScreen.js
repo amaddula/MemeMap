@@ -23,30 +23,29 @@ export default class LinksScreen extends React.Component {
 
              <View style={{flexDirection: 'row'}}>
              <Image source={require('../assets/images/company.png')}
-             style={styles.welcomeImage}
-              />
-              <Image source={require('../assets/images/news.png')}
-              style={styles.welcomeImage}
-               />
-               </View>
+            style={styles.welcomeImage}
+             />
+           <Image source={require('../assets/images/news.png')}
+           style={styles.welcomeImage}
+            />
+            </View>
+            <View style={{flexDirection: 'row'}}>
+            <Image source={require('../assets/images/monster.png')}
+            style={styles.welcomeImage}
+             />
+            <Image source={require('../assets/images/crypenn.png')}
+            style={styles.newImage}
+             />
+           </View>
 
-               <View style={{flexDirection: 'row'}}>
-               <Image source={require('../assets/images/monster.png')}
-               style={styles.welcomeImage}
-                />
-                <Image source={require('../assets/images/crypenn.png')}
-                style={styles.newImage}
-                 />
-                 </View>
-
-                 <View style={{flexDirection: 'row'}}>
-                 <Image source={require('../assets/images/cornellsomething.png')}
-                 style={styles.welcomeImage}
-                  />
-                  <Image source={require('../assets/images/swimtest.png')}
-                  style={styles.welcomeImage}
-                   />
-                   </View>
+            <View style={{flexDirection: 'row'}}>
+           <Image source={require('../assets/images/cornellsomething.png')}
+           style={styles.welcomeImage}
+            />
+            <Image source={require('../assets/images/swimtest.png')}
+            style={styles.welcomeImage}
+             />
+             </View>
       </ScrollView>
     );
   }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet, View, Button, Alert, Image, Text, Animated } from 'react-native';
-import { ExpoLinksView } from '@expo/samples';
-
+import renderIf from './renderIf';
 
 
 export default class LinksScreen extends React.Component {
@@ -9,28 +8,74 @@ export default class LinksScreen extends React.Component {
     title: 'test',
   };
 
-  //state = { uri1: null};
+  constructor(props) {
+    super(props);
+    this.state = {isUserLoggedIn: true};
+
+  _handleButtonPress = () => {
+    isUserLoggedIn=!isUserLoggedIn;
+    );
+  };
+
   render() {
     return (
+      {renderIf(this.state.isUserLoggedIn,
+
+
       <ScrollView style={styles.container}>
-        {/* Go ahead and delete ExpoLinksView and replace it with your
-           * content, we just wanted to provide you with some helpful links */}
-           <View style={styles.buttonContainer}>
-             <Button
-               title="button 1?"
-               onPress={() => this.setState({
-                 var uri1 =  '../assets/images/cornellmeme2.png'
-                 //if (uri1 != null){
-                 //<Image source={require(uri1)}>
-               }
-             />
-           </View>
-           <View style={styles.welcomeContainer}>
+
+           <View style={{flexDirection: 'row'}}>
            <Image source={require('../assets/images/cornellmeme1.png')}
            style={styles.welcomeImage}
             />
-           </View>
+            <Image source={require('../assets/images/cornellmeme2.png')}
+            style={styles.welcomeImage}
+             />
+             </View>
+
+             <View style={{flexDirection: 'row'}}>
+             <Image source={require('../assets/images/cornellsomething.png')}
+             style={styles.welcomeImage}
+              />
+              <Image source={require('../assets/images/swimtest.png')}
+              style={styles.welcomeImage}
+               />
+               </View>
+               <Button
+                title="Press me"
+                  onPress={this._handleButtonPress}
+       />
       </ScrollView>
+    )}
+    {renderIf(!this.state.isUserLoggedIn,
+
+      <ScrollView style={styles.container}>
+
+           <View style={{flexDirection: 'row'}}>
+           <Image source={require('../assets/images/monster.png')}
+           style={styles.welcomeImage}
+            />
+            <Image source={require('../assets/images/news.png')}
+            style={styles.welcomeImage}
+             />
+             </View>
+
+             <View style={{flexDirection: 'row'}}>
+             <Image source={require('../assets/images/company.png')}
+             style={styles.welcomeImage}
+              />
+              <Image source={require('../assets/images/cmeme1.png')}
+              style={styles.welcomeImage}
+               />
+               </View>
+               <Button
+                title="Press me"
+                  onPress={this._handleButtonPress}
+       />
+      </ScrollView>
+    )}
+
+
     );
   }
 }
@@ -42,13 +87,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   buttonContainer: {
-    margin: 20
+    margin: 20,
+    paddingTop: 50,
   },
   welcomeImage: {
     width: 200,
     height: 160,
     resizeMode: 'contain',
-    marginTop: 0,
+    marginTop: 20,
     //marginLeft: -10,
   },
   newImage: {
@@ -64,4 +110,15 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 20,
   },
+  welcomeContainer2: {
+    alignItems: 'center',
+    marginTop: 40,
+    marginBottom: 20,
+  }
 });
+
+// onPress={() => this.setState(
+//  {uri1: "../assets/images/cornellmeme2.png"};
+// )}
+
+//{this.state.uri1 ? <Text>{this.state.text}</Text> : null}

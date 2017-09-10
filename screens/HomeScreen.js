@@ -7,17 +7,36 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Alert,
+  Navigate,
 } from 'react-native';
-import { WebBrowser } from 'expo';
+
+import { StackNavigator } from 'react-navigation';
+
+
+import { WebBrowser, MapView} from 'expo';
 
 import { MonoText } from '../components/StyledText';
+import LinksScreen from '../screens/LinksScreen';
 
 export default class HomeScreen extends React.Component {
+  state={
+      mapRegion: { latitude: 39.78825, longitude: -75.4324,
+        latitudeDelta: 0.0922, longitudeDelta: 0.0421 }
+  };
   static navigationOptions = {
     header: null,
   };
+  _handleButtonPress = () => {
+    const { navigate } = this.prop.navigation;
+    navigate("LinksScreen")
 
+  }
+    _handleMapRegionChange = mapRegion => {
+    this.setState({ mapRegion });
+  };
   render() {
+
     return (
       <View style={styles.container}>
         <ScrollView
@@ -37,38 +56,31 @@ export default class HomeScreen extends React.Component {
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
 
-            <Text style={styles.getStartedText}>ok gllololololololot</Text>
 
-
-
-            <Text style={styles.getStartedText}>
-              omg sick
-            </Text>
           </View>
 
-          <View style={styles.helpContainer}>
+
+          <View>
             <TouchableOpacity
-              onPress={this._handleHelpPress}
-              style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>
-                Help, it didn’t automatically reload!
-              </Text>
-            </TouchableOpacity>
+              style={styles.button}
+              onPress={() => this.props.navigation.navigate("google.com")}>
+              <Text style={styles.buttonText}>Start</Text>
+          </TouchableOpacity>
+
           </View>
+          <MapView
+          style={{ alignSelf: 'stretch', height: 200 }}
+          region={this.state.mapRegion}
+          onRegionChange={this._handleMapRegionChange}
+          showsUserLocation={true}
+        />
+          <View>
+
+          </View>
+
         </ScrollView>
 
-        <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>
-            This is a tab bar. You can edit it in:
-          </Text>
 
-          <View
-            style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>
-              navigation/MainTabNavigator.js
-            </MonoText>
-          </View>
-        </View>
       </View>
     );
   }
@@ -83,8 +95,7 @@ export default class HomeScreen extends React.Component {
 
       return (
         <Text style={styles.developmentModeText}>
-          Development mode is enabled, your app will be slower but you can use
-          useful development tools. {learnMoreButton}
+          Bringing you relevant cultural content at any location.
         </Text>
       );
     } else {
@@ -108,7 +119,10 @@ export default class HomeScreen extends React.Component {
     );
   };
 }
-
+const BasicApp = StackNavigator({
+  Main: {screen: HomeScreen},
+  LinksScreen: {screen: LinksScreen},
+});
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -117,8 +131,8 @@ const styles = StyleSheet.create({
   developmentModeText: {
     marginBottom: 20,
     color: 'rgba(0,0,0,0.4)',
-    fontSize: 14,
-    lineHeight: 19,
+    fontSize: 16,
+
     textAlign: 'center',
   },
   contentContainer: {
@@ -131,10 +145,9 @@ const styles = StyleSheet.create({
   },
   welcomeImage: {
     width: 400,
-    height: 320,
-    //resizeMode: 'contain',
-    marginTop: 0,
-    marginLeft: -10,
+    height: 300,
+    marginTop: -40,
+    marginLeft: 0,
   },
   getStartedContainer: {
     alignItems: 'center',
@@ -195,5 +208,17 @@ const styles = StyleSheet.create({
   helpLinkText: {
     fontSize: 14,
     color: '#2e78b7',
+  },
+  button: {
+    padding: 15,
+    backgroundColor: '#313c48',
+    borderColor: '#000',
+    alignItems:'stretch'
+  },
+  buttonText:{
+    fontSize:30,
+    fontWeight:'bold',
+    color:'#fff',
+    textAlign:'center',
   },
 });

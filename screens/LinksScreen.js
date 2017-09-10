@@ -26,7 +26,7 @@ export default class LinksScreen extends React.Component {
                 }
                  })
                  />
-               }
+
              />
            </View>
            <View style={styles.welcomeContainer}>
@@ -39,7 +39,7 @@ export default class LinksScreen extends React.Component {
       </ScrollView>
     );
   }
-}
+}}
 
 const styles = StyleSheet.create({
   container: {

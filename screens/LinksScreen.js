@@ -5,23 +5,11 @@ import renderIf from './renderIf';
 
 export default class LinksScreen extends React.Component {
   static navigationOptions = {
-    title: 'test',
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {isUserLoggedIn: true};
-
-  _handleButtonPress = () => {
-    isUserLoggedIn=!isUserLoggedIn;
-    );
+    title: 'Memes',
   };
 
   render() {
     return (
-      {renderIf(this.state.isUserLoggedIn,
-
-
       <ScrollView style={styles.container}>
 
            <View style={{flexDirection: 'row'}}>
@@ -41,41 +29,7 @@ export default class LinksScreen extends React.Component {
               style={styles.welcomeImage}
                />
                </View>
-               <Button
-                title="Press me"
-                  onPress={this._handleButtonPress}
-       />
       </ScrollView>
-    )}
-    {renderIf(!this.state.isUserLoggedIn,
-
-      <ScrollView style={styles.container}>
-
-           <View style={{flexDirection: 'row'}}>
-           <Image source={require('../assets/images/monster.png')}
-           style={styles.welcomeImage}
-            />
-            <Image source={require('../assets/images/news.png')}
-            style={styles.welcomeImage}
-             />
-             </View>
-
-             <View style={{flexDirection: 'row'}}>
-             <Image source={require('../assets/images/company.png')}
-             style={styles.welcomeImage}
-              />
-              <Image source={require('../assets/images/cmeme1.png')}
-              style={styles.welcomeImage}
-               />
-               </View>
-               <Button
-                title="Press me"
-                  onPress={this._handleButtonPress}
-       />
-      </ScrollView>
-    )}
-
-
     );
   }
 }
@@ -88,7 +42,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     margin: 20,
-    paddingTop: 50,
+    paddingTop: 200,
   },
   welcomeImage: {
     width: 200,
@@ -114,6 +68,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 40,
     marginBottom: 20,
+  },
+  alternativeLayoutButtonContainer: {
+    margin: 20,
+    flexDirection: 'column',
+    justifyContent: 'space-between'
   }
 });
 

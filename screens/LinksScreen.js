@@ -35,7 +35,7 @@ export default class LinksScreen extends React.Component {
                style={styles.welcomeImage}
                 />
                 <Image source={require('../assets/images/crypenn.png')}
-                style={styles.welcomeImage}
+                style={styles.newImage}
                  />
                  </View>
 
@@ -70,12 +70,12 @@ const styles = StyleSheet.create({
     //marginLeft: -10,
   },
   newImage: {
-    width: 200,
-    height: 160,
-    resizeMode: 'contain',
+    width: 130,
+    height: 100,
+    resizeMode: 'stretch',
     marginTop: 0,
-    //marginLeft: -10,
-    paddingTop: 200,
+    marginLeft: 10,
+  //  paddingTop: 200,
   },
   welcomeContainer: {
     alignItems: 'center',

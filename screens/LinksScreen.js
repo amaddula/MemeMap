@@ -93,9 +93,3 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   }
 });
-
-// onPress={() => this.setState(
-//  {uri1: "../assets/images/cornellmeme2.png"};
-// )}
-
-//{this.state.uri1 ? <Text>{this.state.text}</Text> : null}

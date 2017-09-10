@@ -10,7 +10,6 @@ export default class LinksScreen extends React.Component {
   };
 
   //state = { uri1: null};
-
   render() {
     return (
       <ScrollView style={styles.container}>
@@ -19,24 +18,18 @@ export default class LinksScreen extends React.Component {
            <View style={styles.buttonContainer}>
              <Button
                title="button 1?"
-                onPress={() => this.setState({
-                //  uri1 =  '../assets/images/cornellmeme2.png'
-                  //if (uri1 != null){
-                  //<Image source={require(uri1)}>
-                }
-                 )
-      }
-
+               onPress={() => this.setState({
+                 var uri1 =  '../assets/images/cornellmeme2.png'
+                 //if (uri1 != null){
+                 //<Image source={require(uri1)}>
+               }
              />
            </View>
            <View style={styles.welcomeContainer}>
-           var imageUri = '../assets/images/cornellmeme1.png'
-           <Image source={require(imageUri)}
+           <Image source={require('../assets/images/cornellmeme1.png')}
            style={styles.welcomeImage}
             />
            </View>
-
-
       </ScrollView>
     );
   }

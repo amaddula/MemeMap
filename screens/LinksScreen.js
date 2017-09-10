@@ -25,7 +25,7 @@ export default class LinksScreen extends React.Component {
                   //<Image source={require(uri1)}>
                 }
                  })
-                 />
+
 
              />
            </View>
@@ -39,7 +39,7 @@ export default class LinksScreen extends React.Component {
       </ScrollView>
     );
   }
-}}
+}
 
 const styles = StyleSheet.create({
   container: {

@@ -13,7 +13,7 @@ export default class LinksScreen extends React.Component {
       <ScrollView style={styles.container}>
 
            <View style={{flexDirection: 'row'}}>
-           <Image source={require('../assets/images/cornellmeme1.png')}
+           <Image source={require('../assets/images/pennmeme1.png')}
            style={styles.welcomeImage}
             />
             <Image source={require('../assets/images/cornellmeme2.png')}
@@ -34,7 +34,7 @@ export default class LinksScreen extends React.Component {
                <Image source={require('../assets/images/monster.png')}
                style={styles.welcomeImage}
                 />
-                <Image source={require('../assets/images/cmeme1.png')}
+                <Image source={require('../assets/images/crypenn.png')}
                 style={styles.welcomeImage}
                  />
                  </View>

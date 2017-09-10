@@ -9,13 +9,17 @@ export default class LinksScreen extends React.Component {
     title: 'test',
   };
 
+  state = { uri1: null};
+
+
+
   _onPressButton() {
-  //Alert.alert('You tapped the button!')
-  <View style={styles.welcomeContainer}>
-  <Image source={require('../assets/images/cornellmeme2.png')}
-  style={styles.newImage}
-   />
-  </View>
+  //Alert.alert('Youex tapped the button!')
+  // <View style={styles.welcomeContainer}>
+  // <Image source={require('../assets/images/cornellmeme2.png')}
+  // style={styles.newImage}
+  //  />
+  // </View>
 }
 
   render() {
@@ -25,8 +29,15 @@ export default class LinksScreen extends React.Component {
            * content, we just wanted to provide you with some helpful links */}
            <View style={styles.buttonContainer}>
              <Button
-               onPress={this._onPressButton}
                title="button 1?"
+                onPress={() => this.setState({
+                  uri1 =  '../assets/images/cornellmeme2.png'
+                  //if (uri1 != null){
+                  <Image source={require(uri1)}>
+                }
+                 })
+                 />
+               }
              />
            </View>
            <View style={styles.welcomeContainer}>

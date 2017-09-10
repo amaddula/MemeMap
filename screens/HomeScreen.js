@@ -37,7 +37,7 @@ export default class HomeScreen extends React.Component {
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
 
-            <Text style={styles.getStartedText}>ok go to links ill rename it</Text>
+            <Text style={styles.getStartedText}>ok gllololololololot</Text>
 
 
 

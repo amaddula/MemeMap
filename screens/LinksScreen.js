@@ -9,18 +9,7 @@ export default class LinksScreen extends React.Component {
     title: 'test',
   };
 
-  state = { uri1: null};
-
-
-
-  _onPressButton() {
-  //Alert.alert('Youex tapped the button!')
-  // <View style={styles.welcomeContainer}>
-  // <Image source={require('../assets/images/cornellmeme2.png')}
-  // style={styles.newImage}
-  //  />
-  // </View>
-}
+  //state = { uri1: null};
 
   render() {
     return (
@@ -31,9 +20,9 @@ export default class LinksScreen extends React.Component {
              <Button
                title="button 1?"
                 onPress={() => this.setState({
-                  uri1 =  '../assets/images/cornellmeme2.png'
+                //  uri1 =  '../assets/images/cornellmeme2.png'
                   //if (uri1 != null){
-                  <Image source={require(uri1)}>
+                  //<Image source={require(uri1)}>
                 }
                  })
                  />

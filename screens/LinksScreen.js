@@ -30,7 +30,7 @@ export default class LinksScreen extends React.Component {
              />
            </View>
            <View style={styles.welcomeContainer}>
-           imageUri = '../assets/images/cornellmeme1.png'
+           var imageUri = '../assets/images/cornellmeme1.png'
            <Image source={require(imageUri)}
            style={styles.welcomeImage}
             />

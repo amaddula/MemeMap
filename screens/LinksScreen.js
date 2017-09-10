@@ -24,8 +24,8 @@ export default class LinksScreen extends React.Component {
                   //if (uri1 != null){
                   //<Image source={require(uri1)}>
                 }
-                 })
-
+                 )
+}
 
              />
            </View>

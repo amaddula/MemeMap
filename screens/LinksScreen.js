@@ -25,12 +25,13 @@ export default class LinksScreen extends React.Component {
                   //<Image source={require(uri1)}>
                 }
                  )
-}
+      }
 
              />
            </View>
            <View style={styles.welcomeContainer}>
-           <Image source={require('../assets/images/cornellmeme1.png')}
+           imageUri = '../assets/images/cornellmeme1.png'
+           <Image source={require(imageUri)}
            style={styles.welcomeImage}
             />
            </View>
